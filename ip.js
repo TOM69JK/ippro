@@ -191,7 +191,7 @@ function getIP() {
  */
 function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
   // 发送网络请求
-  httpMethod.get('http://ip-api.com/json/?lang=en').then(response => {
+  $httpClient.get('http://ip-api.com/json/?lang=en').then(response => {
     if (Number(response.status) > 300) {
       throw new Error(`Request error with http status code: ${response.status}\n${response.data}`);
     }
